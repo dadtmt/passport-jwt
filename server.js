@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const passport = require('passport')
 
 require('./passport-strategy')
 const auth = require('./auth')
@@ -21,6 +22,10 @@ const html = `
     <h1>Simple express server</h1>
   </body>
 </html>`
+
+app.get('/test', passport.authenticate('jwt', {session: false}), (req, res) => {
+  res.send(`authorized for user ${req.user.username} with id ${req.user.id}`)
+})
 
 app.get('*', (req, res) => {
   res.send(html)
