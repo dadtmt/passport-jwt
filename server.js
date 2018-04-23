@@ -14,7 +14,7 @@ const html = `
     <link rel="stylesheet" href="/bootstrap.min.css" />
   </head>
   <body>
-    <h1>Auth with passport and JWT</h1>
+    <h1>Simple express server</h1>
   </body>
 </html>`
 
