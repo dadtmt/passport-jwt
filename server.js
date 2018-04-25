@@ -6,6 +6,7 @@ require('./passport-strategy')
 const auth = require('./auth')
 
 const app = express()
+app.use(express.static('public'))
 
 app.use(bodyParser.json())
 app.use('/auth', auth)
@@ -20,6 +21,8 @@ const html = `
   </head>
   <body>
     <h1>Simple express server</h1>
+    <div id="main"></div>
+    <script src="/app.js"></script>
   </body>
 </html>`
 
